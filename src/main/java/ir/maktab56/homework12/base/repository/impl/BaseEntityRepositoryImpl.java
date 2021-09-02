@@ -1,7 +1,7 @@
-package base.repository.impl;
+package ir.maktab56.homework12.base.repository.impl;
 
-import base.domain.BaseEntity;
-import base.repository.BaseEntityRepository;
+import ir.maktab56.homework12.base.domain.BaseEntity;
+import ir.maktab56.homework12.base.repository.BaseEntityRepository;
 
 import javax.persistence.EntityManager;
 import java.io.Serializable;
