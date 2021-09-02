@@ -1,9 +1,11 @@
-package base.domain;
+package ir.maktab56.homework12.base.domain;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
 
+@MappedSuperclass
 public class BaseEntity<ID extends Serializable > implements Serializable{
 
     @Id
