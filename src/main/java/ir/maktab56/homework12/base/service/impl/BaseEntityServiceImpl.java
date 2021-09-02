@@ -1,9 +1,10 @@
-package base.service.impl;
+package ir.maktab56.homework12.base.service.impl;
 
-import base.domain.BaseEntity;
-import base.repository.BaseEntityRepository;
-import base.service.BaseEntityService;
+import ir.maktab56.homework12.base.domain.BaseEntity;
+import ir.maktab56.homework12.base.repository.BaseEntityRepository;
+import ir.maktab56.homework12.base.service.BaseEntityService;
 
+import javax.persistence.PersistenceException;
 import java.io.Serializable;
 import java.util.List;
 
@@ -18,9 +19,16 @@ public class BaseEntityServiceImpl<E extends BaseEntity<ID>, ID extends Serializ
 
     @Override
     public E save(E e) {
-        repository.getEntityManger().getTransaction().begin();
-        e = repository.save(e);
-        repository.getEntityManger().getTransaction().commit();
+        try {
+            repository.getEntityManger().getTransaction().begin();
+            e = repository.save(e);
+            repository.getEntityManger().getTransaction().commit();
+            return e;
+
+        } catch (PersistenceException persistenceException) {
+            System.out.println("Your submit can not saved...");
+        }
+
         return e;
     }
 

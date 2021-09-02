@@ -1,6 +1,6 @@
-package base.service;
+package ir.maktab56.homework12.base.service;
 
-import base.domain.BaseEntity;
+import ir.maktab56.homework12.base.domain.BaseEntity;
 
 import java.io.Serializable;
 import java.util.List;
